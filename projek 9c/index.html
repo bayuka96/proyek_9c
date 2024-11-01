@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animasi Hujan dengan Tombol Timbul dan Grid Gambar</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <!-- Container untuk hujan -->
+    <div class="rain-container" id="rainContainer"></div>
+    <h1 style="color: white; text-align: center; position: absolute; top: 10px;">Projek Akhir Tahun Kelas 9C <br> GAME SCRATCH <br> 2024</h1>
+
+    <!-- Tombol timbul di tengah -->
+    <button class="button-timbul" id="toggleButton" onclick="showImageGrid()">Tombol Timbul</button>
+
+    <!-- Kontainer untuk kotak gambar -->
+    <div class="box-container" id="boxContainer">
+        <!-- Loop untuk membuat 30 kotak dengan gambar -->
+        <div class="box"><img src="download.jpg" ></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 2"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 3"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 4"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 5"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 6"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 7"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 8"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 9"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 10"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 11"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 12"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 13"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 14"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 15"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 16"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 17"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 18"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 19"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 20"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 21"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 22"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 23"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 24"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 25"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 26"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 27"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 28"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 29"></div>
+        <div class="box"><img src="https://via.placeholder.com/150" alt="Gambar 30"></div>
+    </div>
+
+    <script>
+        // Fungsi untuk membuat tetesan hujan
+        const rainContainer = document.getElementById('rainContainer');
+
+        function createRaindrop() {
+            const raindrop = document.createElement('div');
+            raindrop.classList.add('raindrop');
+            raindrop.style.left = `${Math.random() * 100}vw`;
+            raindrop.style.animationDuration = `${Math.random() * 1 + 1}s`;
+            raindrop.style.animationDelay = `${Math.random() * 2}s`;
+            rainContainer.appendChild(raindrop);
+
+            // Hapus tetesan setelah animasi selesai
+            raindrop.addEventListener('animationend', () => {
+                raindrop.remove();
+            });
+        }
+
+        // Membuat tetesan hujan secara terus-menerus
+        setInterval(createRaindrop, 100);
+
+        // Fungsi untuk menampilkan grid gambar dan menyembunyikan tombol setelah tombol ditekan
+        function showImageGrid() {
+            const boxContainer = document.getElementById('boxContainer');
+            const toggleButton = document.getElementById('toggleButton');
+            boxContainer.style.display = 'grid';
+            toggleButton.style.display = 'none'; // Sembunyikan tombol setelah ditekan
+        }
+    </script>
+</body>
+</html>
